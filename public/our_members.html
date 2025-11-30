@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Members - Walkers Club Vizag</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero { background-color: #2f6a2f; color: white; padding: 30px 0; text-align: center; }
+        table { margin-top: 20px; }
+        .search-bar { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <a href="/" class="btn btn-light mb-3">
+                <svg width="16" height="16" fill="currentColor" class="me-2">
+                    <path d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+        <h1>Our Members</h1>
+        <p>Walkers Club Vizag Member Directory</p>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Walkers Club Vizag</a>
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#">Our Members</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="search-bar">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by Name or Mobile...">
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered" id="membersTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Sl.No</th>
+                        <th>Membership No</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tbody id="members-body">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="membersData_from73.js"></script>
+     <script>
+    // 🔎 Live search functionality
+    const searchInput = document.getElementById('searchInput');
+    const tableRows = document.querySelectorAll('#membersTable tbody tr');
+
+    searchInput.addEventListener('keyup', function () {
+    const query = this.value.toLowerCase().trim();
+    const rows = tbody.querySelectorAll('tr'); // Get rows dynamically each time
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(query) ? '' : 'none';
+    });
+  });
+
+    const tbody = document.getElementById("members-body");
+    membersData.forEach(member => {
+      const tr = document.createElement("tr");
+      member.forEach(field => {
+        const td = document.createElement("td");
+        td.textContent = field;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+
+  </script>
+</body>
+</html>
