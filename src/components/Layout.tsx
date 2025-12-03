@@ -49,7 +49,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
  const walkersinternationalDropdownItems = [
   { type: "modal", label: "Certificate of Registration" }, // modal only
-  { path: "/intl-bye-laws", label: "Bye-Laws" }, // change if you need a different URL
   { path: "/past-international-presidents", label: "Past Presidents" }, // previously "PastInternationalPresidents"
   { path: "/emblem", label: "Emblem" },
   { path: "/history", label: "History" },
@@ -196,7 +195,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </DialogHeader>
           <div className="flex justify-center">
             <img 
-              src={certificateType === "international" ? "/gallery/Certificateintl.jpeg" : "/gallery/Certificate.jpg"} 
+              src={certificateType === "international" ? "/gallery/Certificateintl.jpeg" : "/gallery/neww.jpg"} 
               className="w-full max-w-lg rounded-lg" 
             />
           </div>

@@ -140,7 +140,7 @@ const HeroCarousel = () => {
               <blockquote className="italic text-lg md:text-xl text-gray-200 flex items-start gap-3">
                 <Quote className="opacity-70 mt-1" />
                 <span>
-                  Walking is the medicine that heals the mind, body, and spirit.
+                  HEALTH IS WEALTH - WALK YOUR WAY TO HEALTH
                 </span>
               </blockquote>
             </motion.div>
