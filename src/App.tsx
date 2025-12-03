@@ -18,6 +18,9 @@ import PresidentsList from "./pages/PresidentsList";
 import PastInternationalPresidents from "./pages/PastInternationalPresidents";
 import Byelaws from "./pages/Byelaws";
 import OurMembers from "./pages/OurMembers";
+import Emblem from "./pages/Emblem";
+import History from "./pages/History";
+import CurrentPresident from "./pages/CurrentPresident";
 
 
 
@@ -47,6 +50,9 @@ const App = () => (
   <Route path="/past-international-presidents" element={<PastInternationalPresidents />} />
   <Route path="/bye-laws" element={<Byelaws />} />
   <Route path="/our-members" element={<OurMembers />} />
+  <Route path="/emblem" element={<Emblem />} />
+  <Route path="/history" element={<History />} />
+  <Route path="/current-president" element={<CurrentPresident />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
+  const navigate = useNavigate();
   // Replace these with your actual image paths or URLs
   const [images] = useState([
     { id: 1, url: "/gallery/img1.jpg" },
@@ -20,6 +23,16 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* BACK BUTTON */}
+      <div className="container mx-auto px-4 pt-4">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 text-primary font-semibold mb-6 hover:underline hover:opacity-80"
+          aria-label="Go back"
+        >
+          <ArrowLeft size={20} /> Back to Home
+        </button>
+      </div>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary/10 to-background text-center">
         <motion.h1

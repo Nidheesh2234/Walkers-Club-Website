@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +19,7 @@ interface Coordinator {
 }
 
 const ContactUs = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [coordinators, setCoordinators] = useState<Coordinator[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,6 +61,16 @@ const ContactUs = () => {
 
   return (
     <div>
+      {/* BACK BUTTON */}
+      <div className="container mx-auto px-4 pt-4">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 text-primary font-semibold mb-6 hover:underline hover:opacity-80"
+          aria-label="Go back"
+        >
+          <ArrowLeft size={20} /> Back to Home
+        </button>
+      </div>
       {/* Hero Section */}
       {/* <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">

@@ -19,9 +19,9 @@ import ScrollToTop from "./ScrollToTop";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMoreDropdownOpen, setIsMoreDropdownOpen] = useState(false);
   const [isClubDropdownOpen, setIsClubDropdownOpen] = useState(false);
   const [isCertificateModalOpen, setIsCertificateModalOpen] = useState(false);
+  const [certificateType, setCertificateType] = useState<"local" | "international">("local");
   const location = useLocation();
 
   const navLinks = [
@@ -41,12 +41,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   { path: "/walkers-team-2025", label: "2025 Team" },
   { type: "modal", label: "Certificate of Registration" },
   { path: "/our-members", label: "Our Members" },
+  { path: "/contact-us", label: "Contact Us" },
+  { path: "/father-of-walkers", label: "Father of Walkers Movement" },
+  { path: "/gallery", label: "Gallery" },
+  { path: "/WalkersPrayer", label: "Walkers Prayer" },
 ];
 
  const walkersinternationalDropdownItems = [
   { type: "modal", label: "Certificate of Registration" }, // modal only
   { path: "/intl-bye-laws", label: "Bye-Laws" }, // change if you need a different URL
   { path: "/past-international-presidents", label: "Past Presidents" }, // previously "PastInternationalPresidents"
+  { path: "/emblem", label: "Emblem" },
+  { path: "/history", label: "History" },
+  { path: "/current-president", label: "Current President" },
 ];
 
   const safeHref = (path: string | undefined) => {
@@ -57,6 +64,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
+
+    
     <div className="min-h-screen flex flex-col">
       <header className="bg-[#2f6a2f] shadow-md sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-4">
@@ -101,7 +110,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {"path" in item ? (
           <Link to={item.path}>{item.label}</Link>
         ) : (
-          <button onClick={() => setIsCertificateModalOpen(true)}>{item.label}</button>
+          <button onClick={() => { setCertificateType("local"); setIsCertificateModalOpen(true); }}>{item.label}</button>
         )}
       </DropdownMenuItem>
     ))}
@@ -109,7 +118,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 </DropdownMenu>
 
               {/* Walkers International Dropdown */}
-              <DropdownMenu open={isMoreDropdownOpen} onOpenChange={setIsMoreDropdownOpen}>
+              <DropdownMenu>
   <DropdownMenuTrigger className="px-4 py-2 rounded-lg transition-all duration-200 text-primary-foreground hover:bg-primary-foreground/10 flex items-center space-x-1">
     <span>Walkers International</span>
     <ChevronDown size={16} color="white" />
@@ -121,7 +130,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {"path" in item ? (
           <Link to={item.path}>{item.label}</Link>
         ) : (
-          <button onClick={() => setIsCertificateModalOpen(true)}>{item.label}</button>
+          <button onClick={() => { setCertificateType("international"); setIsCertificateModalOpen(true); }}>{item.label}</button>
         )}
       </DropdownMenuItem>
     ))}
@@ -140,27 +149,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               >
                 To Become a Member
               </Link>
-
-              {/* More Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="px-4 py-2 rounded-lg transition-all duration-200 text-primary-foreground hover:bg-primary-foreground/10 flex items-center space-x-1">
-                  <span>More</span>
-                  <ChevronDown size={16} color="white" />
-                </DropdownMenuTrigger>
-
-                <DropdownMenuContent>
-                  {navLinks
-                    .filter(
-                      (link) =>
-                        !["/", "/walkers-visakhapatnam", "/become-member"].includes(link.path)
-                    )
-                    .map((link) => (
-                      <DropdownMenuItem key={link.path} asChild>
-                        <Link to={link.path}>{link.label}</Link>
-                      </DropdownMenuItem>
-                    ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
             </div>
 
             {/* Mobile Button */}
@@ -207,7 +195,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <DialogTitle>Certificate of Registration</DialogTitle>
           </DialogHeader>
           <div className="flex justify-center">
-            <img src="/gallery/Certificate.jpg" className="w-full max-w-lg rounded-lg" />
+            <img 
+              src={certificateType === "international" ? "/gallery/Certificateintl.jpeg" : "/gallery/Certificate.jpg"} 
+              className="w-full max-w-lg rounded-lg" 
+            />
           </div>
         </DialogContent>
       </Dialog>
@@ -230,13 +221,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                {navLinks.map((link) => (
-                  <li key={link.path}>
-                    <Link to={link.path} className="opacity-90 hover:opacity-100 transition-opacity">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {navLinks
+                  .filter((link) => link.path !== "/walkers-visakhapatnam")
+                  .map((link) => (
+                    <li key={link.path}>
+                      <Link to={link.path} className="opacity-90 hover:opacity-100 transition-opacity">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
               </ul>
             </div>
 

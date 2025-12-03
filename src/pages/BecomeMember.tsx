@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { UserPlus } from "lucide-react";
+import { UserPlus, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -8,8 +9,21 @@ import formImage from "@/assets/membership-form.jpg";
 import formPDF from "@/assets/membership-form.pdf";
 
 const BecomeMember = () => {
+  const navigate = useNavigate();
   return (
+
+    
     <div>
+      {/* BACK BUTTON */}
+      <div className="container mx-auto px-4 pt-4">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 text-primary font-semibold mb-6 hover:underline hover:opacity-80"
+          aria-label="Go back"
+        >
+          <ArrowLeft size={20} /> Back to Home
+        </button>
+      </div>
       {/* Hero Section */}
       {/* <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">

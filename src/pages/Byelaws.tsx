@@ -11,7 +11,7 @@ const Byelaws = () => {
 
          {/* BACK BUTTON */}
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/")}
           className="flex items-center gap-2 text-primary font-semibold mb-6 hover:underline hover:opacity-80"
           aria-label="Go back"
         >

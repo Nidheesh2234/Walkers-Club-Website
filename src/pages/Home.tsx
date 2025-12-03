@@ -4,6 +4,8 @@ import { Calendar, Users, Heart, Award } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 import { api } from "@/services/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import MeetingTicker from "@/pages/MeetingTicker";
+
 
 interface Event {
   id: number;
@@ -47,6 +49,9 @@ const Home = () => {
   return (
     <div>
       <HeroCarousel />
+
+  
+
 
       {/* About Section */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/20">
@@ -95,7 +100,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Upcoming Events */}
+      {/* Upcoming Events
       <section className="py-0 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-6">
           <motion.div
@@ -150,7 +155,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Journey Section */}
       <section id="our-journey" className="py-16 bg-background">
