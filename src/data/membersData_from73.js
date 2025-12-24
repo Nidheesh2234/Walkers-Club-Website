@@ -466,7 +466,7 @@ const membersData = [
     [486, "S81", "Wr. SURYANARAYANA S. ", "MIG -1B, 38, Sector-9, M.V.P. Colony, Visakhapatnam,", ""],
     [487, "S82", "Wr.SURYANARAYANA GUPTA D. ", "D.No.33-14-105, Allipuram Main Road, Visakhapatnam-530004,", "9849801182"],
     [488, "S83", "Wr. SURYA RAO G.", "D.No.14-33-35, Maharanipeta, Visakhapatnam-530002 Sl.", ""],
-    [489, "S84", "Wr. SURYA BHASKAR REDDY T. Tirumala Enterprises. BPC Dealers, Near Manorama Theatre,Visakhapatnam -", "530004,", ""],
+    [489, "S84", "Wr. SURYA BHASKAR REDDY T.", "Tirumala Enterprises. BPC Dealers, Near Manorama Theatre,Visakhapatnam -530004,", ""],
     [490, "S85", "Wr. SURYANARAYANA RAO N. ", "8-44-8, Old CBI Office Road, China Waltair, Visakhapatnam-530017,", "9885045509"],
     [491, "S86", "Wr. SURYA PRAKASA RAO K. ", "31-32-75, Dabagardens, Opp. Hotel Jupiter, Visakhapatnam-530020,", ""],
     [492, "S87", "Wr. SUREKHA RAO R. ", "Tulasi Main Apartments, MIG No.60, Seetammadhara , N.E., Visakhapatnam-530013,", ""],
