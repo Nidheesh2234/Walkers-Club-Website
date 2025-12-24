@@ -54,14 +54,14 @@ const Home = () => {
 
 
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+      <section className="py-8 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl mx-auto text-center mb-20"
+            className="max-w-4xl mx-auto text-center mb-8"
           >
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
               Welcome to Walkers Club Visakhapatnam
