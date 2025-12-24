@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Calendar, Users, Heart, Award } from "lucide-react";
 import HeroCarousel from "@/components/HeroCarousel";
 import { api } from "@/services/api";
@@ -201,17 +202,23 @@ const Home = () => {
               Become a member of Walkers Club Visakhapatnam and take the first step towards a healthier,
               more active lifestyle.
             </p>
-            <motion.a
-              href="/become-member"
-              className="inline-flex items-center bg-primary-foreground text-primary px-10 py-5 rounded-xl font-semibold text-lg hover:bg-primary-foreground/90 hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-primary/25"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Join Us Today
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.a>
+            {/** Use client-side routing to avoid full-page navigation and 404s on static hosts */}
+            {(() => {
+              const MotionLink = motion(Link);
+              return (
+                <MotionLink
+                  to="/become-member"
+                  className="inline-flex items-center bg-primary-foreground text-primary px-10 py-5 rounded-xl font-semibold text-lg hover:bg-primary-foreground/90 hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-primary/25"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Join Us Today
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </MotionLink>
+              );
+            })()}
           </motion.div>
         </div>
       </section>
