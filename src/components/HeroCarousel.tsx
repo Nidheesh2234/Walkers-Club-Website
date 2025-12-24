@@ -64,7 +64,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative h-[600px] md:h-[750px] overflow-hidden rounded-none shadow-xl">
+    <div className="relative h-[48vh] md:h-[75vh] overflow-hidden rounded-none shadow-xl">
 
       {/* 🌟 NEXT MEETING TICKER — Positioned on the hero image */}
       <motion.div
@@ -117,7 +117,7 @@ const HeroCarousel = () => {
           <img
             src={slides[current].image}
             alt={slides[current].title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
