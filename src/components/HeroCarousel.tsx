@@ -64,7 +64,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative h-[600px] md:h-[750px] overflow-hidden rounded-3xl shadow-xl">
+    <div className="relative h-[600px] md:h-[750px] overflow-hidden rounded-none shadow-xl">
 
       {/* 🌟 NEXT MEETING TICKER — Positioned on the hero image */}
       <motion.div

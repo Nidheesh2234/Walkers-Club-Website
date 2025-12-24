@@ -200,7 +200,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex justify-center">
             <img 
               src={certificateType === "international" ? "/gallery/Certificateintl.jpeg" : "/gallery/neww.jpg"} 
-              className="w-full max-w-lg rounded-lg" 
+              className="w-full max-w-md rounded-lg" 
             />
           </div>
         </DialogContent>
