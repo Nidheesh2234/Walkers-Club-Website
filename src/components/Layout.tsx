@@ -26,7 +26,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/walkers-visakhapatnam", label: "Walkers Club Visakhapatnam" },
     { path: "/become-member", label: "To Become a Member" },
     { path: "/contact-us", label: "Contact Us" },
     { path: "/father-of-walkers", label: "Father of Walkers Movement" },
@@ -224,15 +223,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                {navLinks
-                  .filter((link) => link.path !== "/walkers-visakhapatnam")
-                  .map((link) => (
-                    <li key={link.path}>
-                      <Link to={link.path} className="opacity-90 hover:opacity-100 transition-opacity">
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                {navLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path} className="opacity-90 hover:opacity-100 transition-opacity">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
