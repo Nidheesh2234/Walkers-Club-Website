@@ -1,7 +1,7 @@
 // API service layer - ready for backend integration
 // Replace API_BASE_URL with your backend URL when ready
 
-const API_BASE_URL = "/api"; // Update this to your backend URL
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 export const api = {
   // Events
@@ -59,7 +59,7 @@ export const api = {
 
   // Membership
    submitMembership: async (formData: FormData) => {
-    const response = await fetch("http://localhost:5000/api/membership", {
+    const response = await fetch(`${API_BASE_URL}/membership`, {
       method: "POST",
       body: formData,
     });
