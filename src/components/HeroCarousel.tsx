@@ -71,7 +71,7 @@ const HeroCarousel = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-       className="
+        className="
   absolute top-6 right-6 z-30
   bg-black/60 backdrop-blur-xl
   text-white
@@ -84,19 +84,19 @@ const HeroCarousel = () => {
         </p>
 
         <div className="mb-3">
-          <p className="font-bold text-lg">Sunday General Meeting</p>
-          <p className="text-sm">📍 VUDA Park</p>
-          <p className="text-sm">🗓 9 Feb 2025</p>
-          <p className="text-sm">⏰ 6:30 AM</p>
+          <p className="font-bold text-lg">New Year Eve Gettogether</p>
+          <p className="text-sm">📍 Hawa Mahal</p>
+          <p className="text-sm">🗓 28-12-2025</p>
+          <p className="text-sm">⏰ 6.00 pm</p>
         </div>
 
         <div className="border-t border-white/30 my-2"></div>
 
         <div>
-          <p className="font-bold text-lg">Friday Walk & Talk</p>
-          <p className="text-sm">📍 Beach Road</p>
-          <p className="text-sm">🗓 7 Feb 2025</p>
-          <p className="text-sm">⏰ 6:00 AM</p>
+          <p className="font-bold text-lg">Installation Meeting</p>
+          <p className="text-sm">📍 Hotel Daspalla</p>
+          <p className="text-sm">🗓 4-1-2026</p>
+          <p className="text-sm">⏰ 7.30 am</p>
         </div>
       </motion.div>
 
@@ -162,9 +162,8 @@ const HeroCarousel = () => {
               setDirection(index > current ? 1 : -1);
               setCurrent(index);
             }}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === current ? "bg-white w-8" : "bg-white/40 hover:bg-white/60"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all ${index === current ? "bg-white w-8" : "bg-white/40 hover:bg-white/60"
+              }`}
           />
         ))}
       </div>

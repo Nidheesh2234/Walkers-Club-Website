@@ -51,8 +51,6 @@ const Home = () => {
     <div>
       <HeroCarousel />
 
-  
-
 
       {/* About Section */}
       <section className="py-8 bg-gradient-to-b from-background to-muted/20">
@@ -64,7 +62,7 @@ const Home = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl mx-auto text-center mb-8"
           >
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
               Welcome to Walkers Club Visakhapatnam
             </h2>
             <p className="text-xl text-black leading-relaxed max-w-3xl mx-auto">
